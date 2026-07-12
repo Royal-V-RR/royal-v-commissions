@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal V- — coder, commissions, chaos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#d6007a;
+    --pink-deep:#a8005f;
+    --purple:#8a4fd6;
+    --blue:#1e4fd6;
+    --cream:#fff8fb;
+    --cream-2:#fff3f9;
+    --plum:#2a1533;
+    --plum-footer:#43284c;
+    --plum-soft:#5a3a63;
+    --pink-soft:#fbd6ea;
+    --blue-soft:#dbe4fb;
+    --purple-soft:#e9ddfb;
+    --radius-lg: 32px;
+    --radius-md: 20px;
+    --shadow-soft: 0 20px 45px -18px rgba(138,79,214,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Quicksand', sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--plum);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--pink-soft); color:var(--pink-deep);}
+
+  /* thin flag ribbon fixed at very top */
+  .top-ribbon{
+    position:sticky; top:0; z-index:50;
+    height:6px;
+    width:100%;
+    background:linear-gradient(90deg, var(--pink) 0 33.3%, var(--purple) 33.3% 66.6%, var(--blue) 66.6% 100%);
+  }
+
+  .eyebrow{
+    font-family:'Caveat', cursive;
+    font-size:1.5rem;
+    color:var(--pink-deep);
+    letter-spacing:0.02em;
+    display:inline-block;
+    margin-bottom:0.2rem;
+  }
+
+  .handle-note{
+    font-family:'Quicksand', sans-serif;
+    font-size:0.78rem;
+    font-weight:600;
+    color:var(--plum-soft);
+    opacity:0.7;
+    margin:0 0 0.6rem;
+  }
+
+  section, header.hero{
+    max-width:1080px;
+    margin:0 auto;
+    padding:5rem 1.75rem;
+    position:relative;
+  }
+
+  /* ---------------- HERO ---------------- */
+  header.hero{
+    padding-top:5.5rem;
+    padding-bottom:4rem;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(214,0,122,0.10) 0%, transparent 46%),
+      radial-gradient(circle at 88% 4%, rgba(30,79,214,0.09) 0%, transparent 42%),
+      radial-gradient(circle at 50% 95%, rgba(138,79,214,0.11) 0%, transparent 48%),
+      var(--cream);
+  }
+
+  .avatar-blob{
+    width:168px; height:168px;
+    padding:8px;
+    border-radius:42% 58% 63% 37% / 45% 40% 60% 55%;
+    background:linear-gradient(135deg, var(--pink), var(--purple) 55%, var(--blue));
+    box-shadow:var(--shadow-soft);
+    margin-bottom:1.75rem;
+    animation:blobshift 9s ease-in-out infinite;
+  }
+  .avatar-blob img{
+    width:100%; height:100%; object-fit:cover;
+    border-radius:42% 58% 63% 37% / 45% 40% 60% 55%;
+    background:var(--cream);
+  }
+  @keyframes blobshift{
+    0%,100%{border-radius:42% 58% 63% 37% / 45% 40% 60% 55%;}
+    50%{border-radius:58% 42% 40% 60% / 55% 60% 40% 45%;}
+  }
+
+  header.hero h1{
+    font-size:clamp(2.6rem, 6vw, 4rem);
+    background:linear-gradient(90deg, var(--pink), var(--purple) 55%, var(--blue));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    line-height:1.05;
+  }
+  .tagline{
+    font-family:'Caveat', cursive;
+    font-size:1.7rem;
+    color:var(--plum-soft);
+    margin-top:0.4rem;
+  }
+  .hero-desc{
+    max-width:520px;
+    margin:1.5rem auto 0;
+    font-size:1.05rem;
+    line-height:1.65;
+    color:var(--plum-soft);
+  }
+
+  .hero-links{
+    margin-top:2.25rem;
+    display:flex;
+    gap:0.9rem;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .btn{
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:0.75rem 1.5rem;
+    border-radius:999px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn-solid{
+    background:linear-gradient(90deg, var(--pink), var(--purple));
+    color:#fff;
+    box-shadow:0 12px 28px -10px rgba(214,0,122,0.55);
+  }
+  .btn-outline{
+    border-color:var(--purple);
+    color:var(--purple);
+    background:#fff;
+  }
+  .btn-outline:hover{background:var(--purple-soft);}
+
+  .mood{
+    max-width:1080px;
+    margin:0 auto;
+    padding:2.5rem 1.75rem 0;
+    text-align:center;
+  }
+  .mood .eyebrow{margin-bottom:1rem;}
+  .mood-frame{
+    max-width:420px;
+    margin:0 auto;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+    border:6px solid #fff;
+    transform:rotate(1.5deg);
+  }
+
+  /* ---------------- RIBBON DIVIDER ---------------- */
+  .ribbon-divider{
+    height:64px;
+    width:100%;
+    display:block;
+  }
+  .ribbon-divider svg{width:100%; height:100%; display:block;}
+
+  /* ---------------- ABOUT ---------------- */
+  .about{
+    padding-top:1rem;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:2.5rem;
+    align-items:start;
+    margin-top:1.75rem;
+  }
+  .about-text p{
+    font-size:1.08rem;
+    line-height:1.8;
+    color:var(--plum-soft);
+    margin:0 0 1.1rem;
+  }
+  .about-text strong{color:var(--pink-deep);}
+  .chip-cloud{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+    align-content:flex-start;
+  }
+  .chip{
+    padding:0.55rem 1.1rem;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.88rem;
+    color:#fff;
+  }
+  .chip:nth-child(1){background:var(--pink);}
+  .chip:nth-child(2){background:var(--purple);}
+  .chip:nth-child(3){background:var(--blue);}
+  .chip:nth-child(4){background:linear-gradient(90deg,var(--pink),var(--blue));}
+  .chip:nth-child(5){background:var(--plum-soft);}
+
+  /* ---------------- FEATURED (ROYALBOT) ---------------- */
+  .featured{
+    background:var(--cream-2);
+    border-radius:var(--radius-lg);
+    max-width:1080px;
+  }
+  .featured-inner{
+    text-align:center;
+    margin-bottom:2.5rem;
+  }
+  .featured-inner h2{font-size:clamp(2rem,4vw,2.75rem);}
+  .featured-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:2.75rem;
+    align-items:center;
+  }
+  .featured-art{
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+    border:6px solid #fff;
+    transform:rotate(-2deg);
+  }
+  .featured-content p{
+    font-size:1.05rem;
+    line-height:1.75;
+    color:var(--plum-soft);
+    margin:0 0 1.25rem;
+  }
+  .feature-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+    margin-bottom:1.75rem;
+  }
+  .pill{
+    background:#fff;
+    border:2px solid var(--purple-soft);
+    color:var(--plum);
+    padding:0.45rem 0.9rem;
+    border-radius:999px;
+    font-size:0.85rem;
+    font-weight:600;
+  }
+  .cta-row{display:flex; gap:0.9rem; flex-wrap:wrap;}
+
+  /* ---------------- PROJECTS ---------------- */
+  .projects h2{text-align:center; font-size:clamp(2rem,4vw,2.75rem); margin-bottom:0.6rem;}
+  .projects .section-sub{
+    text-align:center;
+    color:var(--plum-soft);
+    font-size:1rem;
+    max-width:520px;
+    margin:0 auto 2.75rem;
+  }
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.5rem;
+  }
+  .project-card{
+    background:#fff;
+    border-radius:var(--radius-md);
+    padding:1.75rem;
+    box-shadow:0 14px 30px -18px rgba(42,21,51,0.25);
+    border-top:5px solid var(--purple);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration:none;
+    display:block;
+  }
+  .project-card:nth-child(1){border-top-color:var(--pink);}
+  .project-card:nth-child(2){border-top-color:var(--purple);}
+  .project-card:nth-child(3){border-top-color:var(--blue);}
+  .project-card:nth-child(4){border-top-color:var(--pink-deep);}
+  .project-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 40px -18px rgba(138,79,214,0.4);
+  }
+  .project-card h3{font-size:1.3rem; margin-bottom:0.5rem;}
+  .project-card p{
+    font-size:0.95rem;
+    line-height:1.6;
+    color:var(--plum-soft);
+    margin:0 0 0.9rem;
+  }
+  .project-card .go{
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--pink-deep);
+  }
+
+  /* ---------------- COMMISSIONS ---------------- */
+  .commissions{
+    text-align:center;
+  }
+  .commissions h2{font-size:clamp(2rem,4vw,2.75rem);}
+  .commissions p{
+    max-width:540px;
+    margin:1.25rem auto 2rem;
+    font-size:1.05rem;
+    line-height:1.75;
+    color:var(--plum-soft);
+  }
+  .email-card{
+    display:inline-flex;
+    align-items:center;
+    gap:0.7rem;
+    background:linear-gradient(90deg, var(--pink), var(--purple));
+    color:#fff;
+    padding:1rem 1.75rem;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 16px 32px -12px rgba(214,0,122,0.5);
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer{
+    background:var(--plum-footer);
+    color:#f4e9f7;
+    padding:3rem 1.75rem 2.5rem;
+    text-align:center;
+    margin-top:1rem;
+  }
+  .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:1.75rem;
+    flex-wrap:wrap;
+    margin-bottom:1.25rem;
+    font-weight:700;
+    font-size:0.95rem;
+  }
+  .footer-links a{text-decoration:none; color:#f4e9f7; opacity:0.85;}
+  .footer-links a:hover{opacity:1; color:var(--pink-soft);}
+  footer .copyright{
+    font-size:0.85rem;
+    color:#dcc3e0;
+  }
+  footer .flag-underline{
+    width:70px; height:5px; margin:0 auto 1.25rem;
+    background:linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
+    border-radius:999px;
+  }
+
+  @media (max-width:760px){
+    .about-grid, .featured-grid, .project-grid{grid-template-columns:1fr;}
+    .featured-art{transform:none; max-width:280px; margin:0 auto;}
+    section, header.hero{padding:3.25rem 1.25rem;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .avatar-blob{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-ribbon"></div>
+
+<header class="hero">
+  <div class="avatar-blob">
+    <img src="https://raw.githubusercontent.com/Royal-V-RR/royal-v-commissions/main/IMG_5026.png" alt="Royal V-'s avatar, a cat-shaped burger">
+  </div>
+  <span class="eyebrow">@royalvmusic</span>
+  <p class="handle-note">(on discord lmao)</p>
+  <h1>Royal V-</h1>
+  <p class="tagline">Heya, I go by Royal V- (𝒀𝑶𝑼'𝑳𝑳 𝑴𝑬𝑬𝑻 𝑽+ 𝑽𝑬𝑹𝒀, 𝑽𝑬𝑹𝒀 𝑺𝑶𝑶𝑵)</p>
+  <p class="hero-desc">Mainly known for RoyalBot, I also make quirky websites that come to me as concepts!</p>
+  <div class="hero-links">
+    <a class="btn btn-solid" href="#royalbot">Meet RoyalBot</a>
+    <a class="btn btn-outline" href="https://github.com/Royal-V-RR" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-outline" href="https://discord.gg/respawnraccoon" target="_blank" rel="noopener">Discord</a>
+  </div>
+</header>
+
+<section class="mood">
+  <span class="eyebrow">Current Mood</span>
+  <div class="mood-frame">
+    <img src="https://raw.githubusercontent.com/Royal-V-RR/royal-v-commissions/main/IMG_6459.jpeg" alt="Current mood">
+  </div>
+</section>
+
+<div class="ribbon-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 C150,64 300,0 450,32 C600,64 750,0 900,32 C1050,64 1150,16 1200,32 L1200,64 L0,64 Z" fill="#fff3f9"/>
+    <path d="M0,40 C150,68 300,10 450,40 C600,68 750,10 900,40 C1050,68 1150,26 1200,40" fill="none" stroke="url(#flagGrad)" stroke-width="3" stroke-linecap="round"/>
+    <defs>
+      <linearGradient id="flagGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#d6007a"/>
+        <stop offset="50%" stop-color="#8a4fd6"/>
+        <stop offset="100%" stop-color="#1e4fd6"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<section class="about" id="about">
+  <span class="eyebrow">the basics</span>
+  <h2>About me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Hi, I'm V-! I go by <strong>royalvmusic</strong> pretty much everywhere. I spend most of my free time writing code for a Discord bot that's gotten a little out of hand (in the best way), and tinkering with small web projects just to see if I can.</p>
+      <p>Outside of code, you'll usually find me deep in a run of <strong>Minecraft</strong>, <strong>ULTRAKILL</strong>, or <strong>Hollow Knight</strong>. My taste runs dark and a little irreverent, which... you can probably tell from my profile picture.</p>
+      <p>I take on small <strong>code commissions</strong> too — if you need something built, automated, or fixed, I'm usually up for it.</p>
+    </div>
+    <div class="chip-cloud">
+      <span class="chip">Femboy</span>
+      <span class="chip">Bisexual</span>
+      <span class="chip">Coder</span>
+      <span class="chip">Discord Bot Dev</span>
+      <span class="chip">Powered by spite, white monster, and silliness :3</span>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 C150,0 300,64 450,32 C600,0 750,64 900,32 C1050,0 1150,48 1200,32 L1200,64 L0,64 Z" fill="#fff"/>
+  </svg>
+</div>
+
+<section class="featured" id="royalbot">
+  <div class="featured-inner">
+    <span class="eyebrow">the main attraction</span>
+    <h2>RoyalBot</h2>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-art">
+      <img src="https://raw.githubusercontent.com/Royal-V-RR/royal-v-commissions/main/Untitled357_20260708192236.jpeg" alt="Fan art made for RoyalBot">
+    </div>
+    <div class="featured-content">
+      <p>RoyalBot is my everything-bot for Discord — built, broken, and rebuilt across more late nights than I can count. It started as a quote bot and has since grown into a full-blown feature machine, all hosted for free on GitHub Actions.</p>
+      <div class="feature-pills">
+        <span class="pill">Canvas-rendered quotes</span>
+        <span class="pill">Clankerify personas</span>
+        <span class="pill">Marriage system</span>
+        <span class="pill">Blacklist &amp; moderation</span>
+        <span class="pill">Custom context menus</span>
+        <span class="pill">Persistent status</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="https://discord.gg/respawnraccoon" target="_blank" rel="noopener">Join the server</a>
+        <a class="btn btn-outline" href="https://github.com/Royal-V-RR/discord-bot" target="_blank" rel="noopener">View the repo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 C150,64 300,0 450,32 C600,64 750,0 900,32 C1050,64 1150,16 1200,32 L1200,64 L0,64 Z" fill="#fff3f9"/>
+  </svg>
+</div>
+
+<section class="projects" id="projects">
+  <span class="eyebrow" style="display:block;text-align:center;">also on GitHub</span>
+  <h2>Other things I've built</h2>
+  <p class="section-sub">Smaller projects and web experiments, mostly hosted for free on GitHub Pages.</p>
+  <div class="project-grid">
+    <a class="project-card" href="https://royal-v-rr.github.io/pixeltxt/" target="_blank" rel="noopener">
+      <h3>pixeltxt</h3>
+      <p>A pixel-art converter that compresses images down into clean, shareable .txt files using palette and RLE compression. Dark, minimal, and surprisingly fast.</p>
+      <span class="go">Visit site →</span>
+    </a>
+    <a class="project-card" href="https://royal-v-rr.github.io/desperdicio-de-agua/" target="_blank" rel="noopener">
+      <h3>desperdicio de agua</h3>
+      <p>A school project turned practice ground — built to train up on clean layout and front-end basics around the topic of water waste.</p>
+      <span class="go">Visit site →</span>
+    </a>
+    <a class="project-card" href="https://royal-v-rr.github.io/police-website/" target="_blank" rel="noopener">
+      <h3>police website</h3>
+      <p>A work-in-progress ARG site built for the Respawn Raccoon community — still being pieced together, so expect it to shift as the story does.</p>
+      <span class="go">Visit site →</span>
+    </a>
+  </div>
+</section>
+
+<div class="ribbon-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 C150,0 300,64 450,32 C600,0 750,64 900,32 C1050,0 1150,48 1200,32 L1200,64 L0,64 Z" fill="#fff"/>
+  </svg>
+</div>
+
+<section class="commissions" id="commissions">
+  <span class="eyebrow">let's work together</span>
+  <h2>Commissions</h2>
+  <p>I take on small-to-medium <strong>code commissions</strong> — Discord bots, websites, automations, or bug fixes. If you've got a project in mind or a business inquiry, send me an email and let's talk details.</p>
+  <a class="email-card" href="mailto:royalv.commissions@gmail.com">✉️ royalv.commissions@gmail.com</a>
+</section>
+
+<footer>
+  <div class="flag-underline"></div>
+  <div class="footer-links">
+    <a href="https://github.com/Royal-V-RR" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://discord.gg/respawnraccoon" target="_blank" rel="noopener">Discord</a>
+    <a href="mailto:royalv.commissions@gmail.com">Email</a>
+  </div>
+  <p class="copyright">© 2026 Royal V- · made with lots of chaos and one very good cat-shaped burger</p>
+</footer>
+
+</body>
+</html>
