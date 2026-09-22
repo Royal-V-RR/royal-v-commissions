@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal V- — coder, commissions, chaos</title>
+<title>Royal V-: coder, commissions, chaos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -322,6 +322,28 @@
     font-size:0.85rem;
     color:var(--pink-deep);
   }
+  .project-card .go.status{
+    color:var(--purple);
+  }
+
+  /* ---------------- SUPPORT ---------------- */
+  .support{
+    text-align:center;
+  }
+  .support h2{font-size:clamp(2rem,4vw,2.75rem);}
+  .support p{
+    max-width:540px;
+    margin:1.25rem auto 2rem;
+    font-size:1.05rem;
+    line-height:1.75;
+    color:var(--plum-soft);
+  }
+  .support-links{
+    display:flex;
+    gap:0.9rem;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
 
   /* ---------------- COMMISSIONS ---------------- */
   .commissions{
@@ -436,7 +458,7 @@
     <div class="about-text">
       <p>Hi, I'm V-! I go by <strong>royalvmusic</strong> pretty much everywhere. I spend most of my free time writing code for a Discord bot that's gotten a little out of hand (in the best way), and tinkering with small web projects just to see if I can.</p>
       <p>Outside of code, you'll usually find me deep in a run of <strong>Minecraft</strong>, <strong>ULTRAKILL</strong>, or <strong>Hollow Knight</strong>. My taste runs dark and a little irreverent, which... you can probably tell from my profile picture.</p>
-      <p>I take on small <strong>code commissions</strong> too — if you need something built, automated, or fixed, I'm usually up for it.</p>
+      <p>I take on small <strong>code commissions</strong> too, if you need something built, automated, or fixed, I'm usually up for it.</p>
     </div>
     <div class="chip-cloud">
       <span class="chip">Femboy</span>
@@ -464,14 +486,13 @@
       <img src="https://raw.githubusercontent.com/Royal-V-RR/royal-v-commissions/main/Untitled357_20260708192236.jpeg" alt="Fan art made for RoyalBot">
     </div>
     <div class="featured-content">
-      <p>RoyalBot is my everything-bot for Discord — built, broken, and rebuilt across more late nights than I can count. It started as a quote bot and has since grown into a full-blown feature machine, all hosted for free on GitHub Actions.</p>
+      <p>RoyalBot is my everything-bot for Discord: built, broken, and rebuilt across more late nights than I can count. What started as a quote bot has grown into a full 90+ command ecosystem, all hosted for free on GitHub Actions.</p>
       <div class="feature-pills">
-        <span class="pill">Canvas-rendered quotes</span>
-        <span class="pill">Clankerify personas</span>
-        <span class="pill">Marriage system</span>
-        <span class="pill">Blacklist &amp; moderation</span>
-        <span class="pill">Custom context menus</span>
-        <span class="pill">Persistent status</span>
+        <span class="pill">90+ commands</span>
+        <span class="pill">Jarvis automation</span>
+        <span class="pill">Economy & games</span>
+        <span class="pill">Reaction roles & tickets</span>
+        <span class="pill">Patreon perks</span>
       </div>
       <div class="cta-row">
         <a class="btn btn-solid" href="https://discord.gg/respawnraccoon" target="_blank" rel="noopener">Join the server</a>
@@ -497,21 +518,37 @@
       <p>A pixel-art converter that compresses images down into clean, shareable .txt files using palette and RLE compression. Dark, minimal, and surprisingly fast.</p>
       <span class="go">Visit site →</span>
     </a>
-    <a class="project-card" href="https://royal-v-rr.github.io/desperdicio-de-agua/" target="_blank" rel="noopener">
-      <h3>desperdicio de agua</h3>
-      <p>A school project turned practice ground — built to train up on clean layout and front-end basics around the topic of water waste.</p>
-      <span class="go">Visit site →</span>
-    </a>
     <a class="project-card" href="https://royal-v-rr.github.io/police-website/" target="_blank" rel="noopener">
       <h3>police website</h3>
-      <p>A work-in-progress ARG site built for the Respawn Raccoon community — still being pieced together, so expect it to shift as the story does.</p>
+      <p>A work-in-progress ARG site built for the Respawn Raccoon community, still being pieced together, so expect it to shift as the story does.</p>
       <span class="go">Visit site →</span>
     </a>
     <a class="project-card" href="https://royal-v-rr.github.io/torture-chamber/" target="_blank" rel="noopener">
-      <h3>torture chamber</h3>
-      <p>Working on a fumny image… big evil secret actually :3</p>
+      <h3>Royal V's Image Torture Chamber</h3>
+      <p>A browser-based image effects lab: oil paint and vignette filters alongside a whole set of glitch, warp, and color-distortion effects, plus a persistent file renamer and one-click PNG export. Basically a playground for making your pictures suffer.</p>
       <span class="go">Visit site →</span>
     </a>
+    <a class="project-card" href="https://royal-v-rr.github.io/community-site" target="_blank" rel="noopener">
+      <h3>Community Website</h3>
+      <p>My next big build, now live: a standalone social/community site with profiles, posts, a forum, notifications, and admin tools, run on Supabase and completely independent from RoyalBot.</p>
+      <span class="go">Visit site →</span>
+    </a>
+  </div>
+</section>
+
+<div class="ribbon-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 C150,0 300,64 450,32 C600,0 750,64 900,32 C1050,0 1150,48 1200,32 L1200,64 L0,64 Z" fill="#fff"/>
+  </svg>
+</div>
+
+<section class="support" id="support">
+  <span class="eyebrow">wanna help out</span>
+  <h2>Support</h2>
+  <p>I'm currently saving up for a new laptop to code on. If you'd like to chip in, or just want more RoyalBot stuff, here's where to go.</p>
+  <div class="support-links">
+    <a class="btn btn-solid" href="https://gofund.me/15c1d4aa1" target="_blank" rel="noopener">💻 Help me get a laptop</a>
+    <a class="btn btn-outline" href="https://www.patreon.com/c/RoyalV_/membership" target="_blank" rel="noopener">💜 RoyalBot on Patreon</a>
   </div>
 </section>
 
@@ -524,7 +561,7 @@
 <section class="commissions" id="commissions">
   <span class="eyebrow">let's work together</span>
   <h2>Commissions</h2>
-  <p>I take on small-to-medium <strong>code commissions</strong> — Discord bots, websites, automations, or bug fixes. If you've got a project in mind or a business inquiry, send me an email and let's talk details.</p>
+  <p>I take on small-to-medium <strong>code commissions</strong>: Discord bots, websites, automations, or bug fixes. If you've got a project in mind or a business inquiry, send me an email and let's talk details.</p>
   <a class="email-card" href="mailto:royalv.commissions@gmail.com">✉️ royalv.commissions@gmail.com</a>
 </section>
 
